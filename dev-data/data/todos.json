@@ -1,0 +1,149 @@
+[
+  {
+    "id": "1",
+    "todo": "Host a tofu stir-fry dance party",
+    "completed": true,
+    "createdAt": "2025-04-04T09:00:01.000Z",
+    "difficulty": "medium"
+  },
+  {
+    "id": "2",
+    "todo": "Pick the ripest avocado like a boss",
+    "completed": true,
+    "createdAt": "2025-04-04T09:01:10.000Z",
+    "difficulty": "easy"
+  },
+  {
+    "id": "3",
+    "todo": "Make your own oat milk and feel superior",
+    "completed": true,
+    "createdAt": "2025-04-04T09:02:25.000Z",
+    "difficulty": "medium"
+  },
+  {
+    "id": "4",
+    "todo": "Create the ultimate buddha bowl masterpiece",
+    "completed": false,
+    "createdAt": "2025-04-04T09:03:40.000Z",
+    "difficulty": "challenging"
+  },
+  {
+    "id": "5",
+    "todo": "Build a tower of banana pancakes",
+    "completed": false,
+    "createdAt": "2025-04-04T09:04:55.000Z",
+    "difficulty": "medium"
+  },
+  {
+    "id": "6",
+    "todo": "Roast some chickpeas and call it self-care",
+    "completed": true,
+    "createdAt": "2025-04-04T09:06:07.000Z",
+    "difficulty": "easy"
+  },
+  {
+    "id": "7",
+    "todo": "Blend a smoothie so vibrant it blinds the sun",
+    "completed": false,
+    "createdAt": "2025-04-04T09:07:15.000Z",
+    "difficulty": "easy"
+  },
+  {
+    "id": "8",
+    "todo": "Wrap everything in a rice paper roll",
+    "completed": false,
+    "createdAt": "2025-04-04T09:08:22.000Z",
+    "difficulty": "medium"
+  },
+  {
+    "id": "9",
+    "todo": "Make hummus 3 ways, eat it all",
+    "completed": true,
+    "createdAt": "2025-04-04T09:09:33.000Z",
+    "difficulty": "medium"
+  },
+  {
+    "id": "10",
+    "todo": "Throw a salad together like you're on a cooking show",
+    "completed": false,
+    "createdAt": "2025-04-04T09:10:45.000Z",
+    "difficulty": "easy"
+  },
+  {
+    "id": "11",
+    "todo": "Make a rainbow veggie sushi roll",
+    "completed": false,
+    "createdAt": "2025-04-04T09:11:57.000Z",
+    "difficulty": "challenging"
+  },
+  {
+    "id": "12",
+    "todo": "Find the crispiest falafel in town",
+    "completed": false,
+    "createdAt": "2025-04-04T09:13:08.000Z",
+    "difficulty": "easy"
+  },
+  {
+    "id": "13",
+    "todo": "Conquer the art of vegan mac & cheese",
+    "completed": false,
+    "createdAt": "2025-04-04T09:14:19.000Z",
+    "difficulty": "medium"
+  },
+  {
+    "id": "14",
+    "todo": "Whip up nice cream and pretend it's healthy (it is)",
+    "completed": false,
+    "createdAt": "2025-04-04T09:15:31.000Z",
+    "difficulty": "easy"
+  },
+  {
+    "id": "15",
+    "todo": "Bake banana bread that would make grandmas cry",
+    "completed": false,
+    "createdAt": "2025-04-04T09:16:44.000Z",
+    "difficulty": "medium"
+  },
+  {
+    "id": "16",
+    "todo": "Have a picnic with only things that grew from dirt",
+    "completed": false,
+    "createdAt": "2025-04-04T09:17:53.000Z",
+    "difficulty": "easy"
+  },
+  {
+    "id": "17",
+    "todo": "Try a new restaurant and rate it with stars & hearts",
+    "completed": false,
+    "createdAt": "2025-04-04T09:18:59.000Z",
+    "difficulty": "easy"
+  },
+  {
+    "id": "18",
+    "todo": "Snack on dates and pretend you're in the desert",
+    "completed": false,
+    "createdAt": "2025-04-04T09:20:05.000Z",
+    "difficulty": "easy"
+  },
+  {
+    "id": "19",
+    "todo": "Drink green juice and achieve enlightenment",
+    "completed": true,
+    "createdAt": "2025-04-04T09:21:12.000Z",
+    "difficulty": "easy"
+  },
+  {
+    "id": "20",
+    "todo": "Invent a new smoothie combo and give it a ridiculous name",
+    "completed": false,
+    "createdAt": "2025-04-04T09:22:28.000Z",
+    "difficulty": "medium"
+  },
+  {
+    "id": "21",
+    "todo": "Make a fruit platter so pretty you hesitate to eat it",
+    "completed": false,
+    "createdAt": "2025-04-04T12:53:41.532Z",
+    "difficulty": "medium"
+  }
+]
