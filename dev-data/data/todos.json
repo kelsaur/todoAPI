@@ -2,28 +2,28 @@
   {
     "id": "1",
     "todo": "Host a tofu stir-fry dance party",
-    "completed": true,
+    "completed": false,
     "createdAt": "2025-04-04T09:00:01.000Z",
     "difficulty": "medium"
   },
   {
     "id": "2",
     "todo": "Pick the ripest avocado like a boss",
-    "completed": true,
+    "completed": false,
     "createdAt": "2025-04-04T09:01:10.000Z",
     "difficulty": "easy"
   },
   {
     "id": "3",
     "todo": "Make your own oat milk and feel superior",
-    "completed": true,
+    "completed": false,
     "createdAt": "2025-04-04T09:02:25.000Z",
     "difficulty": "medium"
   },
   {
     "id": "4",
     "todo": "Create the ultimate buddha bowl masterpiece",
-    "completed": false,
+    "completed": true,
     "createdAt": "2025-04-04T09:03:40.000Z",
     "difficulty": "challenging"
   },
@@ -44,7 +44,7 @@
   {
     "id": "7",
     "todo": "Blend a smoothie so vibrant it blinds the sun",
-    "completed": false,
+    "completed": true,
     "createdAt": "2025-04-04T09:07:15.000Z",
     "difficulty": "easy"
   },
@@ -65,7 +65,7 @@
   {
     "id": "10",
     "todo": "Throw a salad together like you're on a cooking show",
-    "completed": false,
+    "completed": true,
     "createdAt": "2025-04-04T09:10:45.000Z",
     "difficulty": "easy"
   },
@@ -79,7 +79,7 @@
   {
     "id": "12",
     "todo": "Find the crispiest falafel in town",
-    "completed": false,
+    "completed": true,
     "createdAt": "2025-04-04T09:13:08.000Z",
     "difficulty": "easy"
   },
@@ -93,7 +93,7 @@
   {
     "id": "14",
     "todo": "Whip up nice cream and pretend it's healthy (it is)",
-    "completed": false,
+    "completed": true,
     "createdAt": "2025-04-04T09:15:31.000Z",
     "difficulty": "easy"
   },

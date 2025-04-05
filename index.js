@@ -3,9 +3,11 @@ const path = require('path'); //safely build file paths
 const fs = require('fs'); //read/write files
 const app = express(); //my actual server
 const PORT = 8000; //the door my app listens on
+const cors = require('cors');
 
 app.use(express.json()); //tolkar allt i body som JSON - middleware
 //säger till express: “If someone sends me JSON (like from Postman), parse it and put it in req.body.”
+app.use(cors());
 
 const dataFilePath = path.join(__dirname, 'dev-data', 'data', 'todos.json'); //path to data file
 
@@ -14,7 +16,7 @@ const toDos = JSON.parse(fileContent); //parses the string into real JS array of
 
 //ROUTES - API endpoints
 app.get('/api/todo', (req, res) => {
-  const { completed, difficulty, page = 1, limit = 5 } = req.query; // req.query contains any query param passed in the URL
+  const { completed, difficulty, page = 1, limit = 10 } = req.query; // req.query contains any query param passed in the URL
 
   let result = toDos;
 
@@ -28,18 +30,19 @@ app.get('/api/todo', (req, res) => {
   }
 
   //Pagination
-  const pageNum = Number(page);
-  const limitNum = Number(limit); //query params come as strings -> Nuber to make it an actual nr
-  const startIndex = (pageNum - 1) * limitNum;
-  const endIndex = startIndex + limitNum;
-  const paginated = result.slice(startIndex, endIndex);
+  let paginated = result;
+
+  if (limit) {
+    const pageNum = Number(page) || 1;
+    const limitNum = Number(limit); //query params come as strings -> Nuber to make it an actual nr
+    const startIndex = (pageNum - 1) * limitNum;
+    const endIndex = startIndex + limitNum;
+    paginated = result.slice(startIndex, endIndex);
+  }
 
   //res.send(JSON.stringify(toDo));
   res.json({
     success: true,
-    total: result.length,
-    page: pageNum,
-    limit: limitNum,
     data: paginated,
   });
 });
