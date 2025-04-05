@@ -14,7 +14,7 @@ const toDos = JSON.parse(fileContent); //parses the string into real JS array of
 
 //ROUTES - API endpoints
 app.get('/api/todo', (req, res) => {
-  const { completed, difficulty } = req.query; // req.query contains any query param passed in the URL
+  const { completed, difficulty, page = 1, limit = 5 } = req.query; // req.query contains any query param passed in the URL
 
   let result = toDos;
 
@@ -27,8 +27,21 @@ app.get('/api/todo', (req, res) => {
     result = result.filter((todo) => todo.difficulty === difficulty);
   }
 
+  //Pagination
+  const pageNum = Number(page);
+  const limitNum = Number(limit); //query params come as strings -> Nuber to make it an actual nr
+  const startIndex = (pageNum - 1) * limitNum;
+  const endIndex = startIndex + limitNum;
+  const paginated = result.slice(startIndex, endIndex);
+
   //res.send(JSON.stringify(toDo));
-  res.json(result);
+  res.json({
+    success: true,
+    total: result.length,
+    page: pageNum,
+    limit: limitNum,
+    data: paginated,
+  });
 });
 
 app.post('/api/todo', (req, res) => {
