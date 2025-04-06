@@ -23,7 +23,7 @@
   {
     "id": "4",
     "todo": "Create the ultimate buddha bowl masterpiece",
-    "completed": true,
+    "completed": false,
     "createdAt": "2025-04-04T09:03:40.000Z",
     "difficulty": "challenging"
   },

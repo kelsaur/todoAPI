@@ -131,7 +131,7 @@ function App() {
             style={{ cursor: 'pointer', width: '40rem' }}
           >
             <span>{todo.todo}</span>
-            <span>{todo.completed ? 'Done!' : 'Not Done!'}</span>
+            {/*<span>{todo.completed ? 'Done!' : 'Not Done!'}</span>*/}
             <span className="badge bg-secondary ms-2">{todo.difficulty}</span>
           </li>
         ))}
