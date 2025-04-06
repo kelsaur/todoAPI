@@ -58,12 +58,13 @@ app.post('/api/todo', (req, res) => {
   };
 
   if (toDoObj.hasOwnProperty('todo')) {
-    const { todo } = toDoObj;
+    const { todo, difficulty } = toDoObj;
 
     //skapar ny todo med ID
     const newTodo = {
       id: getNextId(),
       todo,
+      difficulty,
       completed: false,
       createdAt: new Date().toISOString(),
     };

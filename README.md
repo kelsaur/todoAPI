@@ -17,22 +17,26 @@
 
 ### UI Features (Frontend)
 
-- View all todos
+- View todos
+- Create new todos
+- Delete todos
 - Mark todos as completed
 - Filter by completion & difficulty
 - Pagination
-- Responsive layout using Bootstrap
+- Responsive layout with Bootstrap
 
-### API Features (Backend only)
+### API Features (Backend)
 
-- Create new todo
-- Delete a todo
-- Edit 'completed' and 'difficulty' via PATCH
-- Query support: '?completed=true', '?difficulty=easy', '?page=2&limit=10'
+- Full CRUD (Create, Read, Update, Delete)
+- Edit 'completed' and/or 'difficulty' via PATCH
+- Query support:
+  -'?completed=true'
+  - '?difficulty=easy'
+  - '?page=2&limit=10'
 
 ### 📩 API Endpoints
 
-- GET /api/todo - Get all todos (supports ?completed=true, difficulty, page, limit)
+- GET /api/todo - Get all todos (supports query params)
 - POST /api/todo - Add a new todo
-- PATCH /api/todo/:id - Update completed or difficulty
+- PATCH /api/todo/:id - Update 'completed' and/or 'difficulty'
 - DELETE /api/todo/:id - Delete a todo
