@@ -30,13 +30,13 @@
 - Full CRUD (Create, Read, Update, Delete)
 - Edit 'completed' and/or 'difficulty' via PATCH
 - Query support:
-  -'?completed=true'
-  - '?difficulty=easy'
-  - '?page=2&limit=10'
+  - `?completed=true`
+  - `?difficulty=easy`
+  - `?page=2&limit=10`
 
 ### 📩 API Endpoints
 
-- GET /api/todo - Get all todos (supports query params)
-- POST /api/todo - Add a new todo
-- PATCH /api/todo/:id - Update 'completed' and/or 'difficulty'
-- DELETE /api/todo/:id - Delete a todo
+- GET `/api/todo` - Get all todos (supports query params)
+- POST `/api/todo` - Add a new todo
+- PATCH `/api/todo/:id` - Update 'completed' and/or 'difficulty'
+- DELETE `/api/todo/:id` - Delete a todo
