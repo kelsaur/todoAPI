@@ -21,19 +21,18 @@
 - Mark todos as completed
 - Filter by completion & difficulty
 - Pagination
-- Edit difficulty via dropdown
 - Responsive layout using Bootstrap
 
 ### API Features (Backend only)
 
-- Create new todo (via API)
+- Create new todo
 - Delete a todo
 - Edit 'completed' and 'difficulty' via PATCH
 - Query support: '?completed=true', '?difficulty=easy', '?page=2&limit=10'
 
 ### 📩 API Endpoints
 
-GET /api/todo - Get all todos (supports ?completed=true, difficulty, page, limit)
-POST /api/todo - Add a new todo
-PATCH /api/todo/:id - Update completed or difficulty
+GET /api/todo - Get all todos (supports ?completed=true, difficulty, page, limit)\n
+POST /api/todo - Add a new todo\n
+PATCH /api/todo/:id - Update completed or difficulty\n
 DELETE /api/todo/:id - Delete a todo
