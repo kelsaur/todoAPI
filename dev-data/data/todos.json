@@ -2,7 +2,7 @@
   {
     "id": "1",
     "todo": "Host a tofu stir-fry dance party",
-    "completed": true,
+    "completed": false,
     "createdAt": "2025-04-04T09:00:01.000Z",
     "difficulty": "medium"
   },
@@ -16,7 +16,7 @@
   {
     "id": "3",
     "todo": "Make your own oat milk and feel superior",
-    "completed": false,
+    "completed": true,
     "createdAt": "2025-04-04T09:02:25.000Z",
     "difficulty": "medium"
   },

@@ -1,6 +1,12 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import './App.css';
+import {
+  fetchTodos,
+  toggleCompleted,
+  addTodo,
+  deleteTodo,
+} from './api/todoApi';
 
 //useState - holds onto data (todos)
 //useEffect - lets us do smth when page loads (eg. fetch)
@@ -17,34 +23,32 @@ function App() {
 
   //fetch data from backend
   useEffect(() => {
-    const fetchTodos = async () => {
+    const loadTodos = async () => {
       try {
-        const query = new URLSearchParams();
+        const data = await fetchTodos({
+          completed: filterCompleted,
+          difficulty: filterDifficulty,
+          page,
+        });
 
-        if (filterCompleted) query.append('completed', filterCompleted);
-        if (filterDifficulty) query.append('difficulty', filterDifficulty);
-        query.append('page', page);
-
-        const res = await axios.get(`http://localhost:8000/api/todo?${query}`);
-        setTodos(res.data.data);
+        setTodos(data);
       } catch (err) {
-        console.log('Failed to fetch todo: ', err);
+        console.log('Failed to fetch todos: ', err);
       }
     };
-    fetchTodos();
+    loadTodos();
   }, [filterCompleted, filterDifficulty, page, showAll]);
 
   //use PATCH endpoint
-  const toggleCompleted = async (id, currentStatus) => {
+  const handleToggleCompleted = async (id, currentStatus) => {
     //check if the id exists first, otherwise patch will get triggered on DELETE
     const exists = todos.find((todo) => todo.id === id);
     if (!exists) return;
 
     try {
-      await axios.patch(`http://localhost:8000/api/todo/${id}`, {
-        completed: !currentStatus,
-      });
+      await toggleCompleted(id, currentStatus); //patch it on backend
 
+      //update UI
       setTodos((prev) =>
         prev.map((todo) =>
           //find todo with matching ID and change completed value to opposite, leave other todos unchanged
@@ -59,17 +63,12 @@ function App() {
   //use POST endpoint
   const handleAddTodo = async () => {
     if (!newTodoText.trim()) return;
-
     try {
-      const res = await axios.post('http://localhost:8000/api/todo', {
-        todo: newTodoText,
-        difficulty: newDifficulty,
-      });
+      const newTodos = await addTodo(newTodoText, newDifficulty);
 
       setNewTodoText('');
       setNewDifficulty('');
-
-      setTodos(res.data.toDos); //same as POST response
+      setTodos(newTodos);
     } catch (err) {
       console.log('Failed to add todo: ', err);
     }
@@ -78,9 +77,8 @@ function App() {
   //use DELETE endpoint
   const handleDeleteTodo = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/api/todo/${id}`);
-
-      setTodos((prev) => prev.filter((todo) => todo.id !== id));
+      await deleteTodo(id); //call API
+      setTodos((prev) => prev.filter((todo) => todo.id !== id)); //update UI
     } catch (err) {
       console.log('Failed to delete todo: ', err);
     }
@@ -188,7 +186,7 @@ function App() {
             }`}
           >
             <span
-              onClick={() => toggleCompleted(todo.id, todo.completed)}
+              onClick={() => handleToggleCompleted(todo.id, todo.completed)}
               style={{ cursor: 'pointer' }}
             >
               {todo.todo}
