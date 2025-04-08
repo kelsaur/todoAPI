@@ -1,14 +1,18 @@
-const todoItem = ({ todo, onToggle, onDelete }) => {
+// components/TodoItem.jsx
+const TodoItem = ({ todo, onToggle, onDelete }) => {
   return (
     <li
-      onClick={() => handleToggleCompleted(todo.id, todo.completed)}
+      onClick={() => onToggle(todo.id, todo.completed)}
+      className={`list-group-item d-flex justify-content-between align-items-start ${
+        todo.completed ? 'list-group-item-success' : ''
+      }`}
       style={{ cursor: 'pointer' }}
     >
-      {todo.todo}
+      <span>{todo.todo}</span>
 
-      <div className="d-flex ">
+      <div className="d-flex">
         <span
-          className={`badge d-flex justify-content-center align-items-centern ${
+          className={`badge d-flex justify-content-center align-items-center ${
             todo.difficulty === 'easy'
               ? 'bg-success'
               : todo.difficulty === 'medium'
@@ -20,8 +24,12 @@ const todoItem = ({ todo, onToggle, onDelete }) => {
         >
           {todo.difficulty}
         </span>
+
         <span
-          onClick={() => handleDeleteTodo(todo.id)}
+          onClick={(e) => {
+            e.stopPropagation(); //prevent toggle when deleting
+            onDelete(todo.id);
+          }}
           style={{ cursor: 'pointer' }}
         >
           <i className="bi bi-trash ms-3"></i>
@@ -30,3 +38,5 @@ const todoItem = ({ todo, onToggle, onDelete }) => {
     </li>
   );
 };
+
+export default TodoItem;
