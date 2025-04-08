@@ -13,5 +13,40 @@
     "username": "kellytestuser3",
     "password": "123456",
     "email": "tester@test.com"
+  },
+  {
+    "username": "kellytestuser4",
+    "password": "123456",
+    "email": "tester@testt.com"
+  },
+  {
+    "username": " hej",
+    "password": "hejhejjj",
+    "email": "hej@hejjj.com"
+  },
+  {
+    "username": "hallo",
+    "password": "hej",
+    "email": "hallo@hello.com"
+  },
+  {
+    "username": "Test1",
+    "password": "Test1",
+    "email": "test1@test.com"
+  },
+  {
+    "username": "test2",
+    "password": "test2",
+    "email": "test2@test.com"
+  },
+  {
+    "username": "kjkj",
+    "password": "kj",
+    "email": "kkh@hotmail.com"
+  },
+  {
+    "username": "hellos",
+    "password": "hello2",
+    "email": "hedfdllo@hello.com"
   }
 ]
