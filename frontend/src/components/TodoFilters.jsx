@@ -5,6 +5,7 @@ const TodoFilters = ({
   setFilterDifficulty,
   page,
   setPage,
+  setShowAll,
 }) => {
   return (
     <div className="d-flex gap-3 mb-4 align-items-center">

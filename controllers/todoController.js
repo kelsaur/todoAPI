@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { saveTodos } = require('../helpers/todoHelpers');
 
 const dataFilePath = path.join(__dirname, '../dev-data/data/todos.json'); //path to data file
 /*const fileContent = fs.readFileSync(dataFilePath, 'utf-8'); //reads the file as a string*/
@@ -65,7 +66,7 @@ const createTodo = (req, res) => {
     toDos.push(newTodo);
 
     //overwrite todos.json med nya listan
-    fs.writeFileSync(dataFilePath, JSON.stringify(toDos, null, 2));
+    saveTodos(toDos);
 
     //respond to client
     res.json({
@@ -102,7 +103,7 @@ const updateTodo = (req, res) => {
     todo.difficulty = difficulty;
   }
 
-  fs.writeFileSync(dataFilePath, JSON.stringify(toDos, null, 2));
+  saveTodos(toDos);
 
   res.status(200).json({
     success: true,
@@ -125,7 +126,7 @@ const deleteTodo = (req, res) => {
 
   toDos.splice(index, 1); //removes 1 tiem at that index
 
-  fs.writeFileSync(dataFilePath, JSON.stringify(toDos, null, 2));
+  saveTodos(toDos);
   res.json({
     success: true,
     message: `Todo with id ${id} deleted`,
